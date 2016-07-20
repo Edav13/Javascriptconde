@@ -6,17 +6,17 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		function informeBoton(botonId, botonNombre, botonValor){
-			var userMessage1 = "Id del Botón: "+botonId+"\n";
-			var userMessage2 = "Nombre del Botón: "+botonNombre+"\n";
-			var userMessage3 = "Valor del Botón; "+botonValor;
-			alert(userMessage1 + userMessage2 + userMessage3);
+		function areaCir(r){
+			this.r = r;
+			return 3.1416 * (r * r);
 		}
 	</script>
 </head>
 <body>
-	<input type="button" id="id1" name="Botón izquierdo" value="Izquierdo" onclick="informeBoton(this.id, this.name, this.value)" />
-	<input type="button" id="id2" name="Botón centro" value="Centro" onclick="informeBoton(this.id, this.name, this.value)" />
-	<input type="button" id="id3" name="Botón derecho" value="Derecho" onclick="informeBoton(this.id, this.name, this.value)" />
+	<script>
+		var r = r;
+		var resultado = areaCir(3);
+		document.write("El área del círculo de radio "+ r +" es: "+resultado);
+	</script>
 </body>
 </html>
