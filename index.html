@@ -6,18 +6,16 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		var total = "Esta variable es global";
-		function agregarImpuestos(subtotal, tasaImpuesto){
-			var total = subtotal * (1 + tasaImpuesto/100);
-			return total;
-		}
+		
 	</script>
 </head>
 <body>
 	<script>
-		var ValorFactura = agregarImpuestos(450, 20);
-		alert(ValorFactura);
-		alert(total);
+		var respuesta = confirm("¿Estás de acuerdo con las condiciones?");
+		respuesta;
+		console.log(respuesta);
+		var respuesta1 = prompt("Escribe tu nombre completo", "Don Nadie");
+		alert(respuesta1);
 	</script>
 </body>
 </html>
