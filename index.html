@@ -6,17 +6,18 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		function areaCir(r){
-			this.r = r;
-			return 3.1416 * (r * r);
+		var total = "Esta variable es global";
+		function agregarImpuestos(subtotal, tasaImpuesto){
+			var total = subtotal * (1 + tasaImpuesto/100);
+			return total;
 		}
 	</script>
 </head>
 <body>
 	<script>
-		var r = r;
-		var resultado = areaCir(3);
-		document.write("El área del círculo de radio "+ r +" es: "+resultado);
+		var ValorFactura = agregarImpuestos(450, 20);
+		alert(ValorFactura);
+		alert(total);
 	</script>
 </body>
 </html>
