@@ -6,16 +6,21 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		
+		function siguiente(){
+			window.history.forward();
+		}
+		//history.go(-3);
+		//history.back(2);
+		alert("Has visitado "+history.length+" páginas web en esta sesión del navegador")
 	</script>
 </head>
 <body>
+	<div id="div1">
+		<p>Contenido del elemento DIV</p>
+	</div>
+	<button onclick"siguiente()">Siguiente</button>
 	<script>
-		var respuesta = confirm("¿Estás de acuerdo con las condiciones?");
-		respuesta;
-		console.log(respuesta);
-		var respuesta1 = prompt("Escribe tu nombre completo", "Don Nadie");
-		alert(respuesta1);
+		document.getElementById("div1").innerHTML = "<p>Este es el párrafo que hemos codificado</p>";		
 	</script>
 </body>
 </html>
