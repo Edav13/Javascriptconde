@@ -6,23 +6,36 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<style>
-		td {border: 1px solid gray; padding: 3px 5px;}
+		p {font: 14px normal arial, verdana, helvetica;}
 	</style>
+	<script>
+		function dilafechayhora(){
+			var salida = "";
+			var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+			var ahora = new Date();
+			salida += "<br />Fecha: "+ahora.getDate();
+			salida += "<br />Mes: "+meses[ahora.getMonth()];
+			salida += "<br />año: "+ahora.getFullYear();
+			salida += "<br />horas: "+ahora.getHours();
+			salida += "<br />minutos: "+ahora.getMinutes();
+			salida += "<br />Segundos: "+ahora.getSeconds();
+			document.getElementById("div1").innerHTML = salida;
+		}
+	</script>
 </head>
 <body>
+	La Fecha y hora actuales son: <br />
+	<div id="div1">		
+	</div>
 	<script>
-		document.write("<table>");
-		document.write("<tr><td>appName</td><td>"+navigator.appName+"</td></tr>");
-		document.write("<tr><td>appCodeName</td><td>"+navigator.appCodeName+"</td></tr>");
-		document.write("<tr><td>appVersion</td><td>"+navigator.appVersion+"</td></tr>");
-		document.write("<tr><td>language</td><td>"+navigator.language+"</td></tr>");
-		document.write("<tr><td>cookieEnabled</td><td>"+navigator.cookieEnabled+"</td></tr>");
-		document.write("<tr><td>cpuClass</td><td>"+navigator.cpuClass+"</td></tr>");
-		document.write("<tr><td>onLine</td><td>"+navigator.onLine+"</td></tr>");
-		document.write("<tr><td>platform</td><td>"+navigator.platform+"</td></tr>");
-		document.write("<tr><td>no of Plugins</td><td>"+navigator.plugins.length+"</td></tr>");
-		document.write("</table>");
-
+		dilafechayhora();
+	</script>
+	<input type="button" onclick="location.reload()" value="Recargar" /><br>
+	<script>
+		var miFecha = new Date();
+		document.write("Creado: "+miFecha.toDateString()+" "+miFecha.toTimeString()+"<br />");
+		miFecha.setDate(miFecha.getDate()+33);
+		document.write("Alter adding 33 days: "+miFecha.toDateString()+" "+miFecha.toTimeString());
 	</script>
 </body>
 </html>
