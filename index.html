@@ -9,33 +9,17 @@
 		p {font: 14px normal arial, verdana, helvetica;}
 	</style>
 	<script>
-		function dilafechayhora(){
-			var salida = "";
-			var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-			var ahora = new Date();
-			salida += "<br />Fecha: "+ahora.getDate();
-			salida += "<br />Mes: "+meses[ahora.getMonth()];
-			salida += "<br />año: "+ahora.getFullYear();
-			salida += "<br />horas: "+ahora.getHours();
-			salida += "<br />minutos: "+ahora.getMinutes();
-			salida += "<br />Segundos: "+ahora.getSeconds();
-			document.getElementById("div1").innerHTML = salida;
+		miNuevoObjeto = new Object();
+		miNuevoObjeto.info = "Soy un nuevo objeto básico";
+		function miFunc(){
+			alert(this.info);
 		}
+		miNuevoObjeto.mostrarInfo = miFunc;
 	</script>
 </head>
 <body>
-	La Fecha y hora actuales son: <br />
-	<div id="div1">		
-	</div>
-	<script>
-		dilafechayhora();
-	</script>
-	<input type="button" onclick="location.reload()" value="Recargar" /><br>
-	<script>
-		var miFecha = new Date();
-		document.write("Creado: "+miFecha.toDateString()+" "+miFecha.toTimeString()+"<br />");
-		miFecha.setDate(miFecha.getDate()+33);
-		document.write("Alter adding 33 days: "+miFecha.toDateString()+" "+miFecha.toTimeString());
-	</script>
+	<input type="button" value="Llamada a miFunc" onclick="miFunc()" />
+	<input type="button" value="Llamada a mostrarInfo Mal" onclick="mostrarInfo()" />
+	<input type="button" value="Llamada a mostrarInfo Bien" onclick="miNuevoObjeto.mostrarInfo()" />
 </body>
 </html>
