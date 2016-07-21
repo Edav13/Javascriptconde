@@ -5,22 +5,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
-	<script>
-		function siguiente(){
-			window.history.forward();
-		}
-		//history.go(-3);
-		//history.back(2);
-		alert("Has visitado "+history.length+" páginas web en esta sesión del navegador")
-	</script>
+	<style>
+		td {border: 1px solid gray; padding: 3px 5px;}
+	</style>
 </head>
 <body>
-	<div id="div1">
-		<p>Contenido del elemento DIV</p>
-	</div>
-	<button onclick"siguiente()">Siguiente</button>
 	<script>
-		document.getElementById("div1").innerHTML = "<p>Este es el párrafo que hemos codificado</p>";		
+		document.write("<table>");
+		document.write("<tr><td>appName</td><td>"+navigator.appName+"</td></tr>");
+		document.write("<tr><td>appCodeName</td><td>"+navigator.appCodeName+"</td></tr>");
+		document.write("<tr><td>appVersion</td><td>"+navigator.appVersion+"</td></tr>");
+		document.write("<tr><td>language</td><td>"+navigator.language+"</td></tr>");
+		document.write("<tr><td>cookieEnabled</td><td>"+navigator.cookieEnabled+"</td></tr>");
+		document.write("<tr><td>cpuClass</td><td>"+navigator.cpuClass+"</td></tr>");
+		document.write("<tr><td>onLine</td><td>"+navigator.onLine+"</td></tr>");
+		document.write("<tr><td>platform</td><td>"+navigator.platform+"</td></tr>");
+		document.write("<tr><td>no of Plugins</td><td>"+navigator.plugins.length+"</td></tr>");
+		document.write("</table>");
+
 	</script>
 </body>
 </html>
