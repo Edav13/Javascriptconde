@@ -11,15 +11,33 @@
 	<script>
 		miNuevoObjeto = new Object();
 		miNuevoObjeto.info = "Soy un nuevo objeto básico";
-		function miFunc(){
+		/*function miFunc(){
+			alert(this.info);
+		}*/
+		miNuevoObjeto.mostrarInfo = function(){
 			alert(this.info);
 		}
-		miNuevoObjeto.mostrarInfo = miFunc;
+		function miTipoObjeto(){
+			this.info1 = "Soy un nuevo objeto básico.";
+			this.mostrarInfo1 = function(){
+				alert(this.info1);
+			}
+			this.configurarInfo = function(nuevaInfo){
+				this.info1 = nuevaInfo;
+			}
+		}
+		var miNuevoObjeto1 = new miTipoObjeto();
+		var miNuevoObjeto2 = new miTipoObjeto();
+
 	</script>
 </head>
 <body>
 	<input type="button" value="Llamada a miFunc" onclick="miFunc()" />
 	<input type="button" value="Llamada a mostrarInfo Mal" onclick="mostrarInfo()" />
 	<input type="button" value="Llamada a mostrarInfo Bien" onclick="miNuevoObjeto.mostrarInfo()" />
+	<br>
+	<input type="button" value="Mostrar Info 1" onclick="miNuevoObjeto1.mostrarInfo1()" />
+	<input type="button" value="Mostrar Info 2" onclick="miNuevoObjeto2.mostrarInfo1()" />
+	<input type="button" value="Cambiar info de objeto2" onclick="miNuevoObjeto2.configurarInfo('Nueva Información.')" />
 </body>
 </html>
