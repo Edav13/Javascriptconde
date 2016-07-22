@@ -5,39 +5,36 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
-	<style>
-		p {font: 14px normal arial, verdana, helvetica;}
-	</style>
 	<script>
-		miNuevoObjeto = new Object();
-		miNuevoObjeto.info = "Soy un nuevo objeto básico";
-		/*function miFunc(){
-			alert(this.info);
-		}*/
-		miNuevoObjeto.mostrarInfo = function(){
-			alert(this.info);
-		}
-		function miTipoObjeto(){
-			this.info1 = "Soy un nuevo objeto básico.";
-			this.mostrarInfo1 = function(){
-				alert(this.info1);
-			}
-			this.configurarInfo = function(nuevaInfo){
-				this.info1 = nuevaInfo;
+		function Persona(nombrePersona){
+			this.nombre = nombrePersona;
+			this.info = "Esta persona se llama "+this.nombre;
+			this.mostrarInfo = function(){
+				alert(this.info);
 			}
 		}
-		var miNuevoObjeto1 = new miTipoObjeto();
-		var miNuevoObjeto2 = new miTipoObjeto();
+		var persona1 = new Persona("Adán");
+		var persona2 = new Persona("Eva");
+
+		function Coche(color, marca, kilometros){
+			this.color = color;
+			this.marca = marca;
+			this.kilometros = kilometros;
+			this.info = "Este coche es de la marca "+this.marca+". Es de color "+this.color+" y tiene "+this.kilometros+" kilómetros."
+			this.mostrarInfo = function(){
+				alert(this.info);
+			}
+		}
+		var coche1 = new Coche('Blanco', 'Renault', '32.000');
+		var coche2 = new Coche('Rojo', 'Peugeot', '12.000');
 
 	</script>
 </head>
 <body>
-	<input type="button" value="Llamada a miFunc" onclick="miFunc()" />
-	<input type="button" value="Llamada a mostrarInfo Mal" onclick="mostrarInfo()" />
-	<input type="button" value="Llamada a mostrarInfo Bien" onclick="miNuevoObjeto.mostrarInfo()" />
+	<input type="button" value="Mostrar Info Adán" onclick="persona1.mostrarInfo()" />
+	<input type="button" value="Mostrar Info Eva" onclick="persona2.mostrarInfo()" />
 	<br>
-	<input type="button" value="Mostrar Info 1" onclick="miNuevoObjeto1.mostrarInfo1()" />
-	<input type="button" value="Mostrar Info 2" onclick="miNuevoObjeto2.mostrarInfo1()" />
-	<input type="button" value="Cambiar info de objeto2" onclick="miNuevoObjeto2.configurarInfo('Nueva Información.')" />
+	<input type="button" value="Mostrar Info Renault" onclick="coche1.mostrarInfo()" />
+	<input type="button" value="Mostrar Info Peugeot" onclick="coche2.mostrarInfo()" />
 </body>
 </html>
