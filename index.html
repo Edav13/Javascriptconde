@@ -6,42 +6,49 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		function Persona(nombrePersona){
-			this.nombre = nombrePersona;
-			this.info = "Esta persona se llama "+this.nombre;
-			this.mostrarInfo = function(){
-				alert(this.info);
+		function Domestico(){
+			this.animal = "";
+			this.nombre = "";
+			this.ConfigurarAnimal = function(nuevoAnimal){
+				this.animal = nuevoAnimal;
+			}
+			this.ConfigurarNombre = function(nuevoNombre){
+				this.nombre = nuevoNombre;
 			}
 		}
-		var persona1 = new Persona("Adán");
-		var persona2 = new Persona("Eva");
+		var miGato = new Domestico();
+		miGato.ConfigurarAnimal = "gato";
+		miGato.ConfigurarAnimal = "Silvestre";
 
-		Persona.prototype.diHola = function(){
-			alert(this.nombre + " dice Hola");s
-		}
-
-		function Coche(color, marca, kilometros){
-			this.color = color;
-			this.marca = marca;
-			this.kilometros = kilometros;
-			this.info = "Este coche es de la marca "+this.marca+". Es de color "+this.color+" y tiene "+this.kilometros+" kilómetros."
-			this.mostrarInfo = function(){
-				alert(this.info);
+		Perro.prototype = new Domestico();
+		function Perro(){
+			this.raza = "";
+			this.configurarRaza = function(nuevaRaza){
+				this.raza = nuevaRaza;
+			}
+			this.MostrarInfo = function(){
+				alert(this.nombre + " es un "+this.raza);
 			}
 		}
-		var coche1 = new Coche('Blanco', 'Renault', '32.000');
-		var coche2 = new Coche('Rojo', 'Peugeot', '12.000');
+		var miPerro = new Perro();
+		miPerro.ConfigurarNombre("Montano");
+		miPerro.configurarRaza("San Bernardo");
 
+		String.prototype.voltear = function(){
+			var salida = "";
+			for (var i = this.length - 1; i >= 0; i--) {
+				salida += this.substr(i, 1);
+			}
+			return salida;
+		}
 	</script>
 </head>
 <body>
-	<input type="button" value="Mostrar Info Adán" onclick="persona1.mostrarInfo()" />
-	<input type="button" value="Mostrar Info Eva" onclick="persona2.mostrarInfo()" />
+	<input type="button" value="Mostrar Info" onclick="miPerro.MostrarInfo()" />
 	<br>
-	<input type="button" value="Adán dice Hola" onclick="persona1.diHola()" />
-	<input type="button" value="Eva dice Hola" onclick="persona2.diHola()" />	
-	<br>
-	<input type="button" value="Mostrar Info Renault" onclick="coche1.mostrarInfo()" />
-	<input type="button" value="Mostrar Info Peugeot" onclick="coche2.mostrarInfo()" />
+	<script>
+		var enString = prompt("Escribe tu string de texto:");
+		document.write(enString.voltear());
+	</script>
 </body>
 </html>
