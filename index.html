@@ -16,6 +16,10 @@
 		var persona1 = new Persona("Adán");
 		var persona2 = new Persona("Eva");
 
+		Persona.prototype.diHola = function(){
+			alert(this.nombre + " dice Hola");s
+		}
+
 		function Coche(color, marca, kilometros){
 			this.color = color;
 			this.marca = marca;
@@ -33,6 +37,9 @@
 <body>
 	<input type="button" value="Mostrar Info Adán" onclick="persona1.mostrarInfo()" />
 	<input type="button" value="Mostrar Info Eva" onclick="persona2.mostrarInfo()" />
+	<br>
+	<input type="button" value="Adán dice Hola" onclick="persona1.diHola()" />
+	<input type="button" value="Eva dice Hola" onclick="persona2.diHola()" />	
 	<br>
 	<input type="button" value="Mostrar Info Renault" onclick="coche1.mostrarInfo()" />
 	<input type="button" value="Mostrar Info Peugeot" onclick="coche2.mostrarInfo()" />
