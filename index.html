@@ -6,19 +6,13 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		function Caja(ancho, largo, alto) {
-			function volumen (a, b, c){
-				return a * b * c;
-			}
-			this.volumenCaja = volumen(ancho, largo, alto);
-		}
-		var contenedor = new Caja(5, 4, 3);
+		var usuario = '{"nombreUsuario": "Rosa Blanca", "pais": "España", "altura": 1.75}';
+		//var miObjeto = eval ('(' + usuario + ')');
+		var miObjeto = JSON.parse(usuario);
+		document.write("Su nombre es: "+miObjeto.nombreUsuario+", es de "+miObjeto.pais+" y mide: "+miObjeto.altura);
 	</script>
 </head>
 <body>
-	<input type="button" value="VolumenNo" onclick="alert(volumen(5, 4, 3));" />
-	<input type="button" value="CajaNoEnObjeto" onclick="alert(contenedor.volumen(5, 4, 3));" />
-	<input type="button" value="CajaBien" onclick="alert('Volumen = '+contenedor.volumenCaja);" />
-
+	
 </body>
 </html>
