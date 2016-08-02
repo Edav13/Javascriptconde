@@ -5,17 +5,35 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
-	<script>
-		function alertaBoton(){
-			alert ("Has pulsado el botón");
-		}
-		window.onload = function(){
-			document.getElementById("miBoton").onclick = alertaBoton;
-		}
-	</script>
+	
 </head>
 <body>
-	<input type="button" id="miBoton" value="pulsar">
-	
+	<a href="http://illasaron.com" id="miEnlace">Enlace</a>
+	<script>
+		document.getElementById("miEnlace").onclick = function(){
+			this.href = "http://www.google.com";
+			return confirm("La página está en mantenimento. ¿Quieres ir a Google en su lugar?")
+		}
+
+		function validarFormulario(){
+			document.getElementById("form1").onsubmit = function(){
+				var permitirSubmit = true;
+				if (document.getElementById("usuario").value == "") {
+					alert("Campo nombre no puede estar en blanco.");
+					permitirSubmit = false;
+				}
+				if(permitirSubmit) alert("Datos correctos - Enviando Formulario");
+				return permitirSubmit;
+			}
+		}
+		window.onload = validarFormulario;
+	</script>
+	<form id="form1">
+		Nombre: <input type="text"  value="" name="Nombre Usuario" id="usuario" />[Campo Obligatorio]<br>
+		Teléfono: <input type="text" value="" name="teléfono" id="phone" />[Campo Opcional]<br>
+		<input type="submit" >
+		
+	</form>
 </body>
+	
 </html>
