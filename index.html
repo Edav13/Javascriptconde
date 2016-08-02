@@ -6,13 +6,23 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		var usuario = '{"nombreUsuario": "Rosa Blanca", "pais": "España", "altura": 1.75}';
-		//var miObjeto = eval ('(' + usuario + ')');
-		var miObjeto = JSON.parse(usuario);
-		document.write("Su nombre es: "+miObjeto.nombreUsuario+", es de "+miObjeto.pais+" y mide: "+miObjeto.altura);
+		var Jazzman = new Object();
+		Jazzman.altura = 1.85;
+		Jazzman.edad = 41;
+		Jazzman.colorOjos = "azul";
+		document.write("Las propiedades de Jazzman son: "+JSON.stringify(Jazzman));
+		function jsonParse(){
+			var enString = prompt("Escribe un objeto JSON");
+			var salida = "";
+			miObjeto = JSON.parse(enString);
+			for(i in miObjeto){
+				salida += "Propiedad: "+i+" = "+miObjeto[i]+'\n';
+			}
+			alert(salida);
+		}
 	</script>
 </head>
-<body>
+<body onload = "jsonParse()">
 	
 </body>
 </html>
