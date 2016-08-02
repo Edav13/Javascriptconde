@@ -6,23 +6,16 @@
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
 	<script>
-		var Jazzman = new Object();
-		Jazzman.altura = 1.85;
-		Jazzman.edad = 41;
-		Jazzman.colorOjos = "azul";
-		document.write("Las propiedades de Jazzman son: "+JSON.stringify(Jazzman));
-		function jsonParse(){
-			var enString = prompt("Escribe un objeto JSON");
-			var salida = "";
-			miObjeto = JSON.parse(enString);
-			for(i in miObjeto){
-				salida += "Propiedad: "+i+" = "+miObjeto[i]+'\n';
-			}
-			alert(salida);
+		function alertaBoton(){
+			alert ("Has pulsado el botón");
+		}
+		window.onload = function(){
+			document.getElementById("miBoton").onclick = alertaBoton;
 		}
 	</script>
 </head>
-<body onload = "jsonParse()">
+<body>
+	<input type="button" id="miBoton" value="pulsar">
 	
 </body>
 </html>
