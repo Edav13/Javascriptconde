@@ -9,8 +9,11 @@
 </head>
 <body>
 	<script>
-		var str = 'Este es un, (corto) trozo de texto;';
-		document.write(str+"<br />"+ escape(str));
+		document.cookie = "nombreusuario=alfredo; expires = 03/08/2016 00:00:00";
+		var cookieDate = new Date (2016, 08, 03);
+		document.cookie = "nombreusuario=alfredo; expires ="+cookieDate.toUTCString();
+		var usuario = "Alfredo Blanco";
+		document.cookie = "nombreusuario="+escape(usuario)+";expires="+cookieDate.toUTCString();
 	</script>
 </body>
 	
