@@ -14,6 +14,24 @@
 		document.cookie = "nombreusuario=alfredo; expires ="+cookieDate.toUTCString();
 		var usuario = "Alfredo Blanco";
 		document.cookie = "nombreusuario="+escape(usuario)+";expires="+cookieDate.toUTCString();
+
+		function createCookie(name, value, days, path, domain, secure){
+			if(days){
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				var expires = date.toGMTString();
+			}else 
+				var expires = "";
+			cookieString = name + "="+escape(value);
+			if (expires) cookieString +=";expires="+expires;
+			if (path) cookieString+="; path="+escape(path);
+			if (domain) cookieString +="; domain="+escape(domain);
+			if (secure) cookieString +=";secure";
+			document.cookie = cookieString;
+		}
+		createCookie("nombreusuario","Alfredo Blanco", 5);
+		createCookie("pais", "España", 5);
+		createCookie("estatus", "registrado", 5);
 	</script>
 </body>
 	
