@@ -5,40 +5,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
-	
+	<script>
+		function contarListaItems(){
+			var elemento1 = document.getElementById("listaTareas");
+			var cuenta = 0;
+			for(var i = 0; i < elemento1.childNodes.length; i++){
+				if(elemento1.childNodes[i].nodeType == 1)
+					cuenta++;
+			}
+			alert("La lista ordenada contiene "+cuenta+" items.")
+		}
+		window.onload = contarListaItems;
+	</script>	
 </head>
 <body>
-	<script>
-		function setCookie(cname, cvalue, exdays){
-			var d = new Date();
-			d.setTime(d.getTime()+(exdays* 24 * 60 * 60 * 1000));
-			var expires = "expires="+d.toUTCString();
-			document.cookie = cname + "="+cvalue+";"+expires;
-		}
-		function getCookie(cname){
-			var name = cname + "=";
-			var ca = document.cookie.split(';');
-			for(var i = 0; i < ca.length; i++){
-				var c = ca[i];
-				while(c.charAt(0) == ' ')
-					c = c.substring(1);
-				if (c.indexOf(name) == 0)
-					return unescape(c.substring(name.length, c.length));
-			}
-			return "";
-		}
-
-		setCookie("nombre", "Pablo", 5);
-		setCookie("estatus", "Activo", 3);
-		setCookie("preferencias", "Básicas", 5);
-		var leer = getCookie("estatus");
-		var leer1 = getCookie("preferencias");
-
-	</script>
+	<h1>Cosas para hacer</h1>
+	<ol id="listaTareas">
+		<li>Terminar el guión</li>
+		<li>Preparar los Gráficos</li>
+		<li>Grabar la primera parte</li>
+	</ol>
+	<p id="notasLista">Asegúrate de terminar antes de las 9 para ver el siguiente capítulo de Ghotam.</p>
 </body>
-	<script>
-		document.write('El valor de la cookie estatus es '+leer);
-		document.write('<br>El valor de la cookie preferencias es '+leer1);
 
-	</script>
 </html>
