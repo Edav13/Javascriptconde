@@ -8,32 +8,10 @@
 	
 </head>
 <body>
-	<a href="http://illasaron.com" id="miEnlace">Enlace</a>
 	<script>
-		document.getElementById("miEnlace").onclick = function(){
-			this.href = "http://www.google.com";
-			return confirm("La página está en mantenimento. ¿Quieres ir a Google en su lugar?")
-		}
-
-		function validarFormulario(){
-			document.getElementById("form1").onsubmit = function(){
-				var permitirSubmit = true;
-				if (document.getElementById("usuario").value == "") {
-					alert("Campo nombre no puede estar en blanco.");
-					permitirSubmit = false;
-				}
-				if(permitirSubmit) alert("Datos correctos - Enviando Formulario");
-				return permitirSubmit;
-			}
-		}
-		window.onload = validarFormulario;
+		var str = 'Este es un, (corto) trozo de texto;';
+		document.write(str+"<br />"+ escape(str));
 	</script>
-	<form id="form1">
-		Nombre: <input type="text"  value="" name="Nombre Usuario" id="usuario" />[Campo Obligatorio]<br>
-		Teléfono: <input type="text" value="" name="teléfono" id="phone" />[Campo Opcional]<br>
-		<input type="submit" >
-		
-	</form>
 </body>
 	
 </html>
