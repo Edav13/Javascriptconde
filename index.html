@@ -26,6 +26,16 @@
 		<li>Grabar la primera parte</li>
 	</ol>
 	<p id="notasLista">Asegúrate de terminar antes de las 9 para ver el siguiente capítulo de Ghotam.</p>
+	<p id="demo"></p>
+	<button onclick="miFuncion()">Pruébalo</button>
+	<script>
+		function miFuncion(){
+			var lista = document.getElementById("listaTareas").childNodes[0].innerHTML;
+			var lista1 = document.getElementById("listaTareas").lastChild.innerHTML;
+			document.getElementById("demo").innerHTML = lista + " "+lista1;
+
+		}
+	</script>
 </body>
 
 </html>
