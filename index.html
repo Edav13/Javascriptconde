@@ -5,22 +5,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">	
+	<script>
+		function reemplazarCabecera(){
+			var nuevoH2 = document.createElement("h2");
+			var nuevoH2Text = document.createTextNode("¡Bienvenido!");
+			nuevoH2.appendChild(nuevoH2Text);
+			var miDiv = document.getElementById("id1");
+			var viejoP = document.getElementById("para1");
+			miDiv.replaceChild(nuevoH2, viejoP);
+			var miParrafo = document.getElementById("para2");
+			miDiv.removeChild(miParrafo);
+		}
+		window.onload = function(){
+			document.getElementById("btn").onclick = reemplazarCabecera;
+		}
+	</script>
 </head>
 <body>
-	<div id="id1"> 
-		"Este es el contenido del Div con id "id1"		
-	</div>
-	<script>
-		var nuevoDiv = document.createElement("div");
-		var nuevoNodoTexto = document.createTextNode("Aquí está el contenido del Texto");
-		var miDiv = document.getElementById("id1");
-		//var cloneDiv = miDiv.cloneDiv(true);
-		miDiv.appendChild(nuevoNodoTexto);
-		miDiv.appendChild(nuevoDiv);
-	</script>
-	<div id="id2">
-		<p id="para1">Este párrafo contiene un texto.</p>
-		<p id="para2">Aquí va más texto.</p>
+	<div id="id1">
+		<p id="para1">Bienvenido a mi página web.</p>
+		<p id="para2">Aquí puedes ver los contenidos.</p>
+		<input type="button" id="btn" value="Reemplazar elemento" />
 	</div>
 	<script>
 		var nuevoPara = document.createElement("p");
