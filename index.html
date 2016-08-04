@@ -4,31 +4,30 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
-	<link rel="stylesheet" href="">
-	<style>
-		.democlass{
-			color:red;
-		}
-	</style>	
+	<link rel="stylesheet" href="">	
 </head>
 <body>
-	<div id="id1" title="informe">Aquí incluimos texto.
-		
+	<div id="id1"> 
+		"Este es el contenido del Div con id "id1"		
 	</div>
 	<script>
-		var miNodo = document.getElementById("id1");
-		alert(miNodo.getAttribute("title"));
+		var nuevoDiv = document.createElement("div");
+		var nuevoNodoTexto = document.createTextNode("Aquí está el contenido del Texto");
+		var miDiv = document.getElementById("id1");
+		//var cloneDiv = miDiv.cloneDiv(true);
+		miDiv.appendChild(nuevoNodoTexto);
+		miDiv.appendChild(nuevoDiv);
 	</script>
-	<br>
-	<h1 id="demoid" class="democlass">Hola Mundo</h1>
-	<p>Pulsa el botón para mostrar el valor del atributo class del elemento h1.</p>
-	<button onclick="miFuncion()">Prúebalo</button>
-	<p id="demo"></p>
+	<div id="id2">
+		<p id="para1">Este párrafo contiene un texto.</p>
+		<p id="para2">Aquí va más texto.</p>
+	</div>
 	<script>
-		function miFuncion(){
-			var x = document.getElementsByTagName("H1")[0].getAttribute("class");
-			document.getElementById("demo").innerHTML = x;
-		}
+		var nuevoPara = document.createElement("p");
+		var miDiv = document.getElementById("id2");
+		var para2 = document.getElementById("para2");
+		miDiv.insertBefore(nuevoPara, para2);
+		nuevoPara.innerText = "fdskjñl";
 	</script>
 </body>
 
