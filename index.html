@@ -5,35 +5,29 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>JavaScript Conde</title>
 	<link rel="stylesheet" href="">
-	<script>
-		function contarListaItems(){
-			var elemento1 = document.getElementById("listaTareas");
-			var cuenta = 0;
-			for(var i = 0; i < elemento1.childNodes.length; i++){
-				if(elemento1.childNodes[i].nodeType == 1)
-					cuenta++;
-			}
-			alert("La lista ordenada contiene "+cuenta+" items.")
+	<style>
+		.democlass{
+			color:red;
 		}
-		window.onload = contarListaItems;
-	</script>	
+	</style>	
 </head>
 <body>
-	<h1>Cosas para hacer</h1>
-	<ol id="listaTareas">
-		<li>Terminar el guión</li>
-		<li>Preparar los Gráficos</li>
-		<li>Grabar la primera parte</li>
-	</ol>
-	<p id="notasLista">Asegúrate de terminar antes de las 9 para ver el siguiente capítulo de Ghotam.</p>
+	<div id="id1" title="informe">Aquí incluimos texto.
+		
+	</div>
+	<script>
+		var miNodo = document.getElementById("id1");
+		alert(miNodo.getAttribute("title"));
+	</script>
+	<br>
+	<h1 id="demoid" class="democlass">Hola Mundo</h1>
+	<p>Pulsa el botón para mostrar el valor del atributo class del elemento h1.</p>
+	<button onclick="miFuncion()">Prúebalo</button>
 	<p id="demo"></p>
-	<button onclick="miFuncion()">Pruébalo</button>
 	<script>
 		function miFuncion(){
-			var lista = document.getElementById("listaTareas").childNodes[0].innerHTML;
-			var lista1 = document.getElementById("listaTareas").lastChild.innerHTML;
-			document.getElementById("demo").innerHTML = lista + " "+lista1;
-
+			var x = document.getElementsByTagName("H1")[0].getAttribute("class");
+			document.getElementById("demo").innerHTML = x;
 		}
 	</script>
 </body>
